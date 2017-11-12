@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Tone Analyser</title>
+    <link rel="stylesheet" href="/static/css/foundation.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+  </head>
+  <body>
+    <div class="row align-left heading">
+      <h3>Bleh</h3>
+      <p class="desc"> Our site analyses text entered by the user and suggests how one should change the tone of the message in accordance to the need of the user.</p>
+    </div>
+    <br><br><br>
+    
+
+
+    <form method = 'POST' allign = ''>{% csrf_token %}
+      <div class="row align-center grid-x">
+        <div class="large-9 columns">
+          <label>{{form.as_p}}
+            <!--<input type="text" placeholder="large-12.columns" class="entry" value="Enter Text here" />
+            <textarea placeholder="None" class="entry">Enter text here</textarea>-->
+          </label>
+        </div>
+      </div>
+      <div class="row align-center grid-x grid-padding-x">
+          <button class=" large expanded sub" type="submit">Analyse</button>
+      </div><br><br>
+     <!-- <div class="row grid-x" style="margin-bottom: 20px;">
+          <div class="large-3 columns res_per">
+            <div class="row grid-x">
+              <div class="large-6 columns emotion">Anger</div>
+              <div class="large-6 columns percent">0.75</div>
+            </div>
+          </div>
+          <div class="large-8 columns res_desc"></div>
+      </div>-->
+<!--<h1>{% for i in obj %}
+       {% endfor %} 
+        {{i.id }}<br/>
+        {{i.content }}<br/>
+         </h1>
+-->
+
+
+  {{res}}
+
+    <script src="/static/js/vendor/jquery.js"></script>
+    <script src="/static/js/vendor/what-input.js"></script>
+    <script src="/static/js/vendor/foundation.js"></script>
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

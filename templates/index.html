@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Tone Analyser</title>
+    <link rel="stylesheet" href="/static/css/foundation.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+  </head>
+  <body>
+    
+    <div class="row align-center grid-x heading">
+      <div class="large-10 columns">
+        <div class="caption" style="opacity: 1;">
+        <span class="border" style="font-size: 4em; opacity: 1.0; color: white; font-family: 'Pacifico',cursive;"> <font style="opacity: 1 !important;"><center><b>Message Tone Analyzer</b></center></font></span>
+        <span class="border" style="font-size: 1.5em; opacity: 1.0;color:white;position: relative;top: 20px;"> <font style="opacity: 1 !important;"><center><b>A web tool to analyze the tone of a message.</b></center></font></span>
+      </div>
+      </div>
+      
+    </div>
+    <br><br><br>
+    <div class="row grid-x align-center">
+      <div class="cap large-8 columns"><b> Enter your text</b></div>
+    </div>
+    <form method = "POST">{% csrf_token %}
+      <div class="row align-center grid-x">
+        <div class="large-9 columns">
+          <label>{{form}}
+            
+            
+          
+            
+          </label>
+        </div>
+      </div>
+      <div class="row align-center grid-x grid-padding-x">
+        <div class="large-7 columns">
+          <button class=" large expanded sub" type="submit">Analyse</button>
+
+        </div>
+      </div>
+      </form><br><br>
+      <div class="row grid-x align-center" style="margin-bottom: 20px; padding-top: 25px;padding-bottom: 25px;">
+          <div class="large-7 columns res_per">
+            <div class="row" style="font-weight: bold; font-size: 22px; "> <center>Tones</center></div>
+            <div class="row" style="font-weight: bold; font-size: 12px; "> <center>Greater the score, Higher the tone.</center></div><br><br>
+            <!--
+            <div class="row" style="margin-top: 5px;"> Likely if score is more that 0.5</div>
+            <div class="row">  Very Likely if score is more than 0.75</div>
+            <br>
+            -->
+            {% for i in res %}
+            <div class="row grid-x grid-padding-x sumo" >
+              <div class="large-3 columns emotion">{{i.tone_name}}</div>
+              <div class="large-6 columns bar" >
+                <div class="row grid-x " style="height: 100%;">
+                  <div class="bar_1" style="height: 100% ;width:{{i.w1}}%" ></div><div class="bar_2" style="width: {{i.w2}}%"></div>
+                </div>
+              </div>
+              <div class="large-2 medium-2 columns percent" style="padding-left: 8px;">{{i.score}}</div>
+            </div>
+            {% endfor %}
+          </div>
+         
+      </div>
+    
+
+    <script type="text/javascript" src="/static/js/scr.js"></script>
+    <script src="/static/js/vendor/jquery.js"></script>
+    <script src="/static/js/vendor/what-input.js"></script>
+    <script src="/static/js/vendor/foundation.js"></script>
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

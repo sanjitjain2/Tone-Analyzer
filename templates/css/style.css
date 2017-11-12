@@ -1,0 +1,52 @@
+
+.heading{	
+	background-image: url(bubble.jpg);
+	padding-top: 70px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	box-shadow: 0px 0.5px #c1c1c1;
+	height: 500px;
+	align-content: center;
+}
+
+h3{
+	font-family: 'Pacifico',cursive;
+	color: #581845;
+}
+.entry{
+	height:300px;
+	resize: none;
+	
+}
+.sub{
+	
+	background-color:  #378da7 ;
+	color: white;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	width: 100%;
+	font-weight: bold;
+}
+.res_per{
+	box-shadow: 1px 0.5px #c1c1c1;
+	height: 300px;
+	margin-left:0px;
+	padding-right: 10px;
+	padding-left: 5px;
+	background-color: #f3f7f6;
+	color: #757877;
+	font-size: 15px;
+}
+.res_desc{
+	height: 300px;
+
+	border-bottom: 1px;
+	box-shadow: 0px 0.5px #c1c1c1;
+	margin-left: 30px;
+}
+.bar_1 {
+	background-color: blue;
+}
+.bar_2{
+	background-color: #aab4b0;
+}
